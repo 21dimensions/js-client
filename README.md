@@ -47,6 +47,10 @@ var cat = {
 
     cats = await client.get("cat", { _start: 20, _count: 20 });
 
+    // ordering
+    cats = await client.get("cat", { _orderby: "age" });
+    cats = await client.get("cat", { _orderbydesc: "age" });
+
     //delete
 
     await client.del('cat', id);

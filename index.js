@@ -39,10 +39,10 @@ function del(entityName, id) {
 /**
  * Get array of filtered objects
  * @param {String} entityName 
- * @param {Object} filters 
+ * @param {Object} query 
  */
-function get(entityName, filters) {
-    return axios.get(getUrl(entityName) + '?' + (filters ? Object.keys(filters).map(k => k + '=' + filters[k]).join('&') : ''), getOptions()).then(r => r.data);
+function get(entityName, query) {
+    return axios.get(getUrl(entityName) + '?' + (filters ? Object.keys(query).map(k => k + '=' + query[k]).join('&') : ''), getOptions()).then(r => r.data);
 }
 
 /**
